@@ -19,3 +19,23 @@ struct BsTree
         this->freq = freq; //uptading the frequence
     }
 };
+
+// important function to use in bstree
+struct compare{
+    bool operator()(BsTree* left, BsTree* right){
+        return (left->freq > right->freq);
+    }
+};
+
+// function to filll the bstree acording the letter
+void fillcode(struct BsTree* root, string str){
+    if (root == NULL){
+        return;
+    }
+    if (root->data != '$'){
+        codes[root->data]=str;
+    }
+    fillcode(root->left, str + "0");
+    fillcode(root->right, str + "1");
+}
+
