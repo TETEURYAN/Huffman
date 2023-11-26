@@ -39,3 +39,4 @@ void fillcode(struct BsTree* root, string str){
     fillcode(root->right, str + "1");
 }
 
+
